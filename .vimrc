@@ -95,3 +95,24 @@
  " 行に線
  set cursorline
 
+ " NeoBundleの設定関連
+ " 操作方法
+ " :NeoBundleInstall  # インストール
+ " :NeoBundleUpdate   # アップデート
+ "
+  set nocompatible
+  filetype plugin indent off 
+ 
+  if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+   " call neobundle#rc(expand('~/.vim/bundle'))
+  endif 
+ 
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+ 
+ " 以下は必要に応じて追加
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/neosnippet.vim'
+  NeoBundle 'Shougo/vimfiler'
+  NeoBundle 'Shougo/vimproc'
